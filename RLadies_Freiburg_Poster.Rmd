@@ -65,7 +65,7 @@ ggplot(gendergap, aes(x=position, y=percent, group=gender, color=gender)) +
   geom_segment(aes(x=2.8, xend=2.8, y=20, yend=80), size=1.5, arrow = arrow(), show.legend=F, color="darkgrey")+
   geom_label(aes(x=2.8, y=50, label = "Data Science\nGender Gap"), show.legend=F, color="darkgrey") +
   theme_light() +
-  ggtitle("Percentage of women in data science rolls in the EU, 2020") +
+  ggtitle("Percentage of women in data science roles in the EU, 2020") +
   theme(
     axis.title.x = element_blank(),
     axis.title.y = element_blank(),
