@@ -33,7 +33,7 @@ knitr::opts_chunk$set(echo = FALSE,
 options(knitr.table.format = "html") 
 
 library(tidyverse)
-library(wordcloud2)
+library(wordcloud)
 library(rnaturalearth)
 library(rnaturalearthdata)
 library(ggrepel)
@@ -108,7 +108,10 @@ df$freq <- as.numeric(as.character(df$freq))
 
 my_colours_list <- rep(my_colours, round(length(word)/length(my_colours)))
 
-wordcloud2(data=df, size=0.3, color=my_colours_list, fontFamily = "Lato", minRotation = -pi/4, rotateRatio = 0.5, shape = "diamond")
+#wordcloud(words = df$word, freq = df$freq, 
+#          size=0.3, color=my_colours_list, fontFamily = "Lato", 
+#          minRotation = -pi/4, rotateRatio = 0.5, shape = "diamond")
+wordcloud(words = df$word, freq = df$freq)
 ```
 <br/>
 
