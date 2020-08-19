@@ -123,7 +123,7 @@ We'd love to have you join --
 **newbies and pros alike!**
 
 ```{r, rladies_global, warnings=F,  fig.height= 4, out.width="100%"}
-rladies_global <- read_csv('rladies_global.csv') 
+rladies_global <- read_csv('data/rladies_global.csv') 
 
 #cities <- read_csv('world-cities-database/worldcitiespop.csv')%>%
   #distinct(City, .keep_all = TRUE)
