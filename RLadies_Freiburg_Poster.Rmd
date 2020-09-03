@@ -16,13 +16,13 @@ output:
 primary_colour: "#883A8A"
 secondary_colour: "#4D204E"
 accent_colour: "#C64781"
-main_textsize: "60px"
+main_textsize: "70px"
 body_textsize: "24px"
 title_textsize: "28px"
-caption_textsize: "22px"
+caption_textsize: "24px"
 main_fontfamily: "Open Sans"
 ---
-
+# Women* in data science
 ```{r, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE,
                       warning = FALSE,
@@ -41,14 +41,9 @@ library(extrafont)
 
 my_colours <- c("#883a8a", "#4d204e", "#b172b3", "#400542", "#050530", "#40407d", "#69589C", "#5339A0")
 ```
+Even in 2020, **women and gender minorities are vastly underrepresented in data science and technology careers** - despite the fact that women make up **more than 50%** of undergraduate and graduate programs in most countries.  
 
-# Gender disparities in data science
-
-Even in 2020, **women and gender minorities are vastly underrepresented in data science and technology careers.**  
-  
-This is despite the fact that women make up **more than 50%** of undergraduate and graduate programs in most countries.  
-
-```{r, gendergap,  fig.height= 5}
+```{r, gendergap, fig.height = 5}
 #need to note source: Harnham Diversity Report 2020
 gendergap <- tibble(
   gender = as.factor(rep(c("women", "men"), 4)),
@@ -81,11 +76,23 @@ ggplot(gendergap, aes(x=position, y=percent, group=gender, color=gender)) +
   theme(text = element_text(size = 16, family = "Open Sans"))
 ```
 
-**R-Ladies is a worldwide initiative to promote gender diversity in one of the most widely-used statistical programming languages: R!**  
+:::: {style="display: flex;"}
 
+::: {}
+**R-Ladies is:**  
+  - a worldwide initiative   
+  - to promote gender diversity  
+  - in one of the most widely-used statistical programming languages: R!  
+:::
+
+::: {}
 ```{r, out.width = "150px"}
 knitr::include_graphics("https://rladies.org/wp-content/uploads/2016/12/R-LadiesGlobal.png")
 ```
+:::
+
+::::
+
 <br/>
 <br/>
 
@@ -95,13 +102,13 @@ R is a **powerful, dynamic, open-source language** that is **completely free**.
 
 It is used by students, researchers, and professionals from the public and private sectors for all types of data science tasks. 
 
-Here are some examples of what you can do in R:  
+Here are some examples of the many things you can do in R:  
 
-```{r wordcloud}
+```{r wordcloud, fig.height = 7}
 # topics from https://yabellini.shinyapps.io/RLadiesLesson/
-word = c("statistics", "visualisation", "machine learning", "analyse Twitter", "sentiment analysis", "neural networks", "digital humanities", "web scraping", "interactive web apps", "distant reading", "graphs", "reproducible science", "deep learning", "geographical data", "data communication", "decision trees", "tidyverse", "teaching", "data wrangling", "time series", "ggplot", "statistics", "data", "modeling", "histogram", "boxplot", "design", "analysis", "results", "p-value", "wordcloud")
-freq = c(100, 100, 64, 87, 82, 86, 83, 62, 67, 63, 62, 64, 62, 44, 45, 42, 43, 25, 22, 24, 22, 25, 24, 26, 23, 24, 26, 21, 25, 24)
-freq = c(100, 100, 64, 87, 83, 86, 83, 63, 67, 63, 63, 64, 63, 44, 45, 43, 43, 35, 33, 34, 33, 35, 34, 36, 33, 34, 36, 31, 35, 34, 39)
+
+word = c("statistics", "visualisation", "machine learning", "analyse Twitter", "sentiment analysis", "neural networks", "digital humanities", "web scraping", "interactive web apps", "distant reading", "graphs", "reproducible science", "deep learning", "geographical data", "data communication", "decision trees", "tidyverse", "data wrangling", "time series", "ggplot", "statistics", "data", "modeling", "design", "analysis", "results")
+freq = c(100, 100, 64, 87, 83, 86, 83, 63, 67, 63, 63, 45, 43, 43, 35, 33, 34, 33, 35, 34, 36, 33, 34, 36, 31, 35)
 
 df = cbind(word, freq)
 df <- as.data.frame(df)
@@ -119,16 +126,12 @@ wordcloud(words = df$word, freq = df$freq,
 <br/>
 <br/>
 <br/>
+Poster by @kylamcconnell and @JuliaMuellerFr
 <br/>
 
 # Join R-Ladies!
 
-**Your local R-Ladies Freiburg chapter always welcomes new members!**
-  
-We meet once per month (on the first Wednesday, at 6 p.m.), every month, with a new topic presented by one of our members.
-
-We'd love to have you join -- **newbies and pros alike! All genders and levels are welcome.**  
-<br/>
+**Your local R-Ladies Freiburg chapter always welcomes new members!**  
 
 ```{r, rladies_global, warnings=F,  fig.height= 4}
 rladies_global <- read_csv('data/rladies_global.csv') 
@@ -162,11 +165,34 @@ ggplot() +
   xlim(-140,140)
 ```
 
-Find us on www.meetup.com/rladies-freiburg/ or follow the QR code:  
-```{r, echo = FALSE, out.height="20%", out.width="20%"}
+:::: {style="display: flex;"}
+
+::: {}
+We meet once per month (on the first Wednesday, at 6 p.m.), every month, with a new topic presented by one of our members.  
+:::
+
+::: {}
+```{r, out.width = "150px"}
+knitr::include_graphics("https://rladies.org/wp-content/uploads/2016/12/R-LadiesGlobal.png")
+```
+:::
+
+::::
+
+We'd love to have you join -- **newbies and pros alike! All genders and levels are welcome.**  
+
+:::: {style="display: flex;"}
+
+::: {}
+Follow the QR code to find R-Ladies Freiburg on **meetup.com**.  
+Feel free to contact us with any questions!  
+:::
+
+::: {}
+```{r, out.width = "100px"}
 knitr::include_graphics("data/qr-code.png")
 ```
+:::
 
-Feel free to contact us with any questions.
+::::
 
-Poster by @kylamcconnell and @JuliaMuellerFr
