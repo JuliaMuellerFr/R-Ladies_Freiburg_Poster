@@ -21,8 +21,10 @@ body_textsize: "24px"
 title_textsize: "28px"
 caption_textsize: "24px"
 main_fontfamily: "Open Sans"
+#Command to render is: pagedown::chrome_print("PATH/GitHub/R-Ladies_Freiburg_Poster/RLadies_Freiburg_Poster.Rmd"
+#pagedown::chrome_print("C:/Users/Lenovo/Documents/GitHub/R-Ladies_Freiburg_Poster/RLadies_Freiburg_Poster.Rmd"))
 ---
-# Women* in data science
+# Women* in data science {.mybreak}
 ```{r, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE,
                       warning = FALSE,
@@ -43,7 +45,7 @@ my_colours <- c("#883a8a", "#4d204e", "#b172b3", "#400542", "#050530", "#40407d"
 ```
 Even in 2020, **women and gender minorities are vastly underrepresented in data science and technology careers** - despite the fact that women make up **more than 50%** of undergraduate and graduate programs in most countries.  
 
-```{r, gendergap, fig.height = 5}
+```{r, gendergap, fig.height = 6}
 #need to note source: Harnham Diversity Report 2020
 gendergap <- tibble(
   gender = as.factor(rep(c("women", "men"), 4)),
@@ -55,10 +57,14 @@ gendergap <- tibble(
 
 ggplot(gendergap, aes(x=position, y=percent, group=gender, color=gender)) +
   geom_line(stat = "identity", size=2, show.legend=F) +
-  geom_label(data=subset(gendergap, position == "Director"), aes(x=position, y=percent, label = gender), show.legend=F) +
-  geom_segment(aes(x=2.8, xend=2.8, y=80, yend=20), size=1.5, arrow = arrow(), show.legend=F, color="darkgrey")+
-  geom_segment(aes(x=2.8, xend=2.8, y=20, yend=80), size=1.5, arrow = arrow(), show.legend=F, color="darkgrey")+
-  geom_label(aes(x=2.8, y=50, label = "Data Science\nGender Gap"), show.legend=F, color="darkgrey") +
+  geom_label(data=subset(gendergap, position == "Director"), 
+             aes(x=position, y=percent, label = gender), show.legend=F) +
+  geom_segment(aes(x=2.8, xend=2.8, y=80, yend=20), 
+               size=1.5, arrow = arrow(), show.legend=F, color="darkgrey")+
+  geom_segment(aes(x=2.8, xend=2.8, y=20, yend=80), 
+               size=1.5, arrow = arrow(), show.legend=F, color="darkgrey")+
+  geom_label(aes(x=2.8, y=50, label = "Data Science\nGender Gap"), 
+             show.legend=F, color="darkgrey") +
   theme_light() +
   labs(title = "Percentage of women in data science roles in the EU, 2020",
        caption = "Source: Harnham Diversity Report 2020") +
@@ -87,23 +93,22 @@ ggplot(gendergap, aes(x=position, y=percent, group=gender, color=gender)) +
 
 ::: {}
 ```{r, out.width = "150px"}
-knitr::include_graphics("https://rladies.org/wp-content/uploads/2016/12/R-LadiesGlobal.png")
+knitr::include_graphics("data/R-LadiesGlobal.png")
 ```
 :::
 
 ::::
 
-<br/>
-<br/>
+# Why use R? {.mybreak}
 
-# Why use R?
+R is a language for **statistical computing** and **data visualisation** which is  
+- completely **free**  
+- rapidly becoming the **standard** for statistical analyses  
+- **powerful** and **flexible**  
+- **open-source** and **well-supported**  
+- **popular** with students, researchers, professionals and employers.  
 
-R is a **powerful, dynamic, open-source language** that is **completely free**.  
-
-It is used by students, researchers, and professionals from the public and private sectors for all types of data science tasks. 
-
-Here are some examples of the many things you can do in R:  
-
+Here are some examples of the many things you can achieve with R:  
 ```{r wordcloud, fig.height = 7}
 # topics from https://yabellini.shinyapps.io/RLadiesLesson/
 
@@ -124,12 +129,9 @@ wordcloud(words = df$word, freq = df$freq,
 ```
 <br/>
 <br/>
-<br/>
-<br/>
-Poster by @kylamcconnell and @JuliaMuellerFr
-<br/>
+Poster by Kyla McConnell (@kylamcconnell) and Julia Müller (@JuliaMuellerFr)
 
-# Join R-Ladies!
+# Join R-Ladies! {.mybreak}
 
 **Your local R-Ladies Freiburg chapter always welcomes new members!**  
 
@@ -172,13 +174,13 @@ ggplot() +
   - once per month  
   - on the first Wednesday  
   - at 6 p.m.  
-with a new topic presented by one of our members.
+to learn about and discuss a new topic presented by one of our members.
 
 :::
 
 ::: {}
 ```{r, out.width = "150px"}
-knitr::include_graphics("https://rladies.org/wp-content/uploads/2016/12/R-LadiesGlobal.png")
+knitr::include_graphics("data/R-LadiesGlobal.png")
 ```
 :::
 
@@ -189,15 +191,14 @@ We'd love to have you join -- **newbies and pros alike! All genders and levels a
 :::: {style="display: flex;"}
 
 ::: {}
-Follow the QR code to find R-Ladies Freiburg on **meetup.com**.  
-Feel free to contact us with any questions!  
+**Any questions?**  
+Follow the QR code to find us on **meetup.com** or tweet us @RLadiesFreiburg!  
 :::
 
 ::: {}
-```{r, out.width = "100px"}
+```{r, out.width = "90px"}
 knitr::include_graphics("data/qr-code.png")
 ```
 :::
 
 ::::
-
