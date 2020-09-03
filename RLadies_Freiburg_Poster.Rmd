@@ -168,7 +168,12 @@ ggplot() +
 :::: {style="display: flex;"}
 
 ::: {}
-We meet once per month (on the first Wednesday, at 6 p.m.), every month, with a new topic presented by one of our members.  
+**We meet**  
+  - once per month  
+  - on the first Wednesday  
+  - at 6 p.m.  
+with a new topic presented by one of our members.
+
 :::
 
 ::: {}
