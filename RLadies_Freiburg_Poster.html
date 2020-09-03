@@ -25,7 +25,7 @@ Font-awesome icons ie github or twitter
 <!--
 Google fonts api stuff
 -->
-<link href='https://fonts.googleapis.com/css?family=Oswald' rel='stylesheet'>
+<link href='https://fonts.googleapis.com/css?family=Open Sans' rel='stylesheet'>
 <link href='https://fonts.googleapis.com/css?family=Rasa' rel='stylesheet'>
 
 <!--
@@ -59,17 +59,23 @@ margin-bottom: 2cm;
 position: sticky;
 width: 100%;
 }
-pre.sourceCode.r {
-background-color: #dddddd40;
-border-radius: 4mm;
+pre.sourceCode.r, pre.sourceCode.python {
+background-color: #ffffff20;
+border: solid #4D204E 1mm;
+border-radius: 0.5em;
 padding: 4mm;
-width: 75%;
 margin: auto;
 margin-top: 1em;
 margin-bottom: 1em;
 /* align-items: center; */
 }
-code.sourceCode.r{
+div.sourceCode {
+background-color: transparent;
+width: 85%;
+margin-left: auto;
+margin-right: auto;
+}
+code.sourceCode.r, code.sourceCode.python {
 background-color: transparent;
 font-size: 20pt;
 border-radius: 2mm;
@@ -78,7 +84,7 @@ code {
 font-size: 25pt;
 font-family: monospace;
 background-color: #4D204E24;
-color: #883A8A;
+color: #4D204E;
 padding: 1.2mm;
 line-height: 1;
 border-radius: 2mm;
@@ -125,7 +131,7 @@ padding: 0px;
 }
 .outer {
 width: 16.5in;
-height: calc(11.7in *  (1 - 0.1 - 0.1 - 0.01) );
+height: calc(11.7in *  (1 - 0.1 - 0.05 - 0.01) );
 -webkit-column-count: 3; /* Chrome, Safari, Opera */
 -moz-column-count: 3; /* Firefox */
 column-count: 3;
@@ -168,7 +174,7 @@ font-weight: normal;
 background: 0;
 }
 #author {
-color: #883A8A;
+color:#883A8A;
 margin: 0;
 line-height: 85%;
 font-size: 1.17em;
@@ -181,7 +187,7 @@ font-size: 25px;
 margin: 0;
 }
 sup {
-color: #FCD112;
+color: #C64781;
 }
 .affiliation sup {
 font-size: 20px;
@@ -243,7 +249,7 @@ height: calc(11.7in * 0.1);
 position: absolute;
 background-color: #883A8A;
 color: #ffffff90;
-font-family: Oswald;
+font-family: Open Sans;
 background-image: linear-gradient(#883A8A 50%,#4D204E);
 }
 .main strong {
@@ -275,7 +281,7 @@ position: absolute;
 }
 .main p {
 font-size: 60px;
-font-family: Oswald;
+font-family: Open Sans;
 text-align: center;
 margin: 0;
 position: absolute;
@@ -285,22 +291,32 @@ transform: translateY(-50%);
 margin-left: 1em;
 }
 .fab {
-color: #00000030;
+color: #00000060;
 font-size: 25px;
 }
 .twitter, i {
-color: #00000030;
+color: #00000060;
 font-size: 35px;
 text-decoration: none;
 }
 a.email {
 text-decoration: none;
-color: #00000030;
+color: #00000060;
 font-size: 35px;
 }
 .envelope {
-color: #00000030;
+color: #00000060;
 font-size: 5px;
+text-decoration: none;
+}
+.globe {
+color: #00000060;
+font-size: 5px;
+text-decoration: none;
+}
+.globetext {
+color: #00000060;
+font-size: 35px;
 text-decoration: none;
 }
 .poster_wrap {
@@ -310,8 +326,8 @@ padding: 0cm;
 }
 .main_bottom {
 width: 16.5in;
-height: calc(11.7in * 0.1);
-margin-top: calc(11.7in * (1 - 0.1));
+height: calc(11.7in * 0.05);
+margin-top: calc(11.7in * (1 - 0.05));
 position: absolute;
 background-color: #883A8A;
 background-image: linear-gradient(#4D204E 10%, #883A8A);
@@ -370,42 +386,36 @@ span > #tab:mytable {
 
 </div>
 
-<p>Even in 2020, <strong>women and gender minorities are</strong><br />
-<strong>vastly underrepresented in data science</strong><br />
-and technology careers.</p>
-<p>This is despite the fact that women make up<br />
-<strong>more than 50%</strong> of undergraduate and graduate<br />
-programs in most countries.</p>
+<div id="gender-disparities-in-data-science" class="section level1">
+<h1>Gender disparities in data science</h1>
+<p>Even in 2020, <strong>women and gender minorities are vastly underrepresented in data science and technology careers.</strong></p>
+<p>This is despite the fact that women make up <strong>more than 50%</strong> of undergraduate and graduate programs in most countries.</p>
 <p><img src="RLadies_Freiburg_Poster_files/figure-html/gendergap-1.png" width="100%" style="display: block; margin: auto;" /></p>
-<p><strong>R-Ladies is a worldwide iniative to promote</strong><br />
-<strong>gender diversity in one of the most widely-used</strong><br />
-<strong>statistical programming languages: R!</strong></p>
+<p><strong>R-Ladies is a worldwide initiative to promote gender diversity in one of the most widely-used statistical programming languages: R!</strong></p>
 <p><img src="https://rladies.org/wp-content/uploads/2016/12/R-LadiesGlobal.png" width="150px" style="display: block; margin: auto;" /></p>
-<p>R is a <strong>powerful, dynamic, open-source language</strong><br />
-that is <strong>completely free</strong> for everyone to use.</p>
-<p>It is used by students, researchers, and professionals<br />
-from the public and private sectors for all types<br />
-of data science tasks.</p>
+</div>
+<div id="why-use-r" class="section level1">
+<h1>Why use R?</h1>
+<p>R is a <strong>powerful, dynamic, open-source language</strong> that is <strong>completely free</strong>.</p>
+<p>It is used by students, researchers, and professionals from the public and private sectors for all types of data science tasks.</p>
 <p>Here are some examples of what you can do in R:</p>
-<p><img src="RLadies_Freiburg_Poster_files/figure-html/wordcloud-1.png" width="80%" style="display: block; margin: auto;" />
+<p><img src="RLadies_Freiburg_Poster_files/figure-html/wordcloud-1.png" width="100%" style="display: block; margin: auto;" />
+<br/>
+<br/>
 <br/></p>
-<p><strong>Your local R-Ladies Freiburg chapter</strong><br />
-<strong>always welcomes new members!</strong></p>
-<p>We meet once per month (on the first Wednesday,<br />
-at 6 p.m.), every month, with a new topic<br />
-presented by one of our members.</p>
-<p>We’d love to have you join –<br />
-<strong>newbies and pros alike!</strong></p>
+</div>
+<div id="join-r-ladies" class="section level1">
+<h1>Join R-Ladies!</h1>
+<p><strong>Your local R-Ladies Freiburg chapter always welcomes new members!</strong></p>
+<p>We meet once per month (on the first Wednesday, at 6 p.m.), every month, with a new topic presented by one of our members.</p>
+<p>We’d love to have you join – <strong>newbies and pros alike! All genders and levels are welcome.</strong><br />
+<br/></p>
 <p><img src="RLadies_Freiburg_Poster_files/figure-html/rladies_global-1.png" width="100%" style="display: block; margin: auto;" /></p>
-<p>Check our Meetup page for our next meeting<br />
-(the first Wednesday of every month):<br />
-<a href="https://www.meetup.com/rladies-freiburg/" class="uri">https://www.meetup.com/rladies-freiburg/</a><br />
-or follow the QR code.</p>
-<p><strong>All genders and levels are welcome</strong><br />
-and encouraged to join!<br />
-Feel free to contact us with any questions.</p>
-<p>Poster by <span class="citation">@kylamcconnell</span><br />
-and <span class="citation">@theoneandonlyjuliamueller</span></p>
+<p>Find us on www.meetup.com/rladies-freiburg/ or follow the QR code:<br />
+<img src="data/qr-code.png" width="20%" height="20%" style="display: block; margin: auto;" /></p>
+<p>Feel free to contact us with any questions.</p>
+<p>Poster by <span class="citation">@kylamcconnell</span> and <span class="citation">@JuliaMuellerFr</span></p>
+</div>
 
 </div>
 <div class="main">
