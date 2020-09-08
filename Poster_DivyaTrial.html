@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+
+<title>Poster_DivyaTrial.utf8</title>
+
+
+
+
+
+
+<!--
+Font-awesome icons ie github or twitter
+-->
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/brands.css" integrity="sha384-n9+6/aSqa9lBidZMRCQHTHKJscPq6NW4pCQBiMmHdUCvPN8ZOg2zJJTkC7WIezWv" crossorigin="anonymous">
+
+<!--
+Google fonts api stuff
+-->
+<link href='https://fonts.googleapis.com/css?family=Open Sans' rel='stylesheet'>
+<link href='https://fonts.googleapis.com/css?family=Rasa' rel='stylesheet'>
+
+<!--
+Here are the required style attributes for css to make this poster work :)
+-->
+<style>
+@page {
+size: 16.5in 11.7in;
+margin: 0;
+padding: 0;
+}
+body {
+margin: 0px;
+padding: 0px;
+width: 16.5in;
+height: 11.7in;
+text-align: justify;
+font-size: 24px;
+line-height: 1.05;
+}
+/* RMarkdown Class Styles */
+/* center align leaflet map,
+from https://stackoverflow.com/questions/52112119/center-leaflet-in-a-rmarkdown-document */
+.html-widget {
+margin: auto;
+position: sticky;
+margin-top: 2cm;
+margin-bottom: 2cm;
+}
+.leaflet.html-widget.html-widget-static-bound.leaflet-container.leaflet-touch.leaflet-fade-anim.leaflet-grab.leaflet-touch-drag.leaflet-touch-zoom {
+position: sticky;
+width: 100%;
+}
+pre.sourceCode.r {
+background-color: #dddddd40;
+border-radius: 4mm;
+padding: 4mm;
+width: 75%;
+margin: auto;
+margin-top: 1em;
+margin-bottom: 1em;
+/* align-items: center; */
+}
+code.sourceCode.r{
+background-color: transparent;
+font-size: 20pt;
+border-radius: 2mm;
+}
+code {
+font-size: 25pt;
+font-family: monospace;
+background-color: #4D204E24;
+color: #883A8A;
+padding: 1.2mm;
+line-height: 1;
+border-radius: 2mm;
+}
+caption {
+margin-bottom: 10px;
+font-size: 24px;
+font-style: italic;
+}
+
+tbody tr:nth-child(odd) {
+    background-color: #4D204E20;
+}
+.table>thead>tr>th, .table>tbody>tr>th, .table>tfoot>tr>th, .table>thead>tr>td, .table>tbody>tr>td, .table>tfoot>tr>td{
+  border-spacing: 0;
+  font-size: 40%;
+  border-style: none;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-right: 1em;
+  padding-left: 1em;
+  line-height: 1em;
+}
+table {
+  margin: auto;
+}
+th {
+  padding-left: 5mm;
+  padding-right: 5mm;
+}
+.caption {
+font-size: 24px;
+font-style: italic;
+padding-top: 0;
+}
+.references {
+font-size: 20px;
+line-height: 90%;
+}
+/* Create three unequal columns that floats next to each other */
+.column {
+float: left;
+padding: 0px;
+}
+.outer {
+width: 16.5in;
+height: calc(11.7in *  (1 - 0.1 - 0.05 - 0.01) );
+-webkit-column-count: 2; /* Chrome, Safari, Opera */
+-moz-column-count: 2; /* Firefox */
+column-count: 2;
+-webkit-column-fill: auto;
+-moz-column-fill: auto;
+column-fill: auto;
+column-gap: 0;
+padding-left: 0cm;
+padding-right: 0cm;
+/* -webkit-column-rule-width: 50%;
+-moz-column-rule-width: 50%;
+column-rule-width: 50%; */
+-webkit-column-rule-style: none;
+-moz-column-rule-style: none;
+column-rule-style: none;
+-webkit-column-rule-color: black;
+-moz-column-rule-color: black;
+column-rule-color: black;
+background-color: #ffffff;
+font-family: Rasa;
+margin-top: calc(11.7in *  0.1 );
+padding-top: 1em;
+padding-bottom: 1em;
+}
+span.citation {
+  color: #4D204E;
+  font-weight: bold;
+}
+a {
+text-decoration: none;
+color: #4D204E;
+}
+#title {
+font-size: 28px;
+text-align: left;
+margin: 0;
+line-height: 98%;
+border-bottom: 0;
+font-weight: normal;
+background: 0;
+}
+#author {
+color: #883A8A;
+margin: 0;
+line-height: 85%;
+font-size: 1.17em;
+}
+#affiliation {
+padding-top: 0.1em;
+color: ;
+font-style: italic;
+font-size: 25px;
+margin: 0;
+}
+sup {
+color: #C64781;
+}
+.affiliation sup {
+font-size: 20px;
+}
+.author {
+text-align: left;
+}
+.author sup {
+font-size: 30px;
+}
+.author_extra {
+color: #4D204E;
+margin: 0;
+line-height: 85%;
+font-size: 35px;
+text-align: left;
+}
+.outer h1, h2, h3, h4, h5, h6 {
+text-align: center;
+margin: 0;
+font-weight: bold;
+}
+.section h1 {
+  text-align:center;
+  padding-bottom:5px;
+  background:
+    linear-gradient(
+      to left,
+      #ffffff 1%,
+      #ffffff 20%,
+      #883A8A75 33%,
+      #883A8A 50%,
+      #883A8A75 66%,
+      #ffffff 80%,
+      #ffffff 99%
+    )
+    left
+    bottom
+    #ffffff
+    no-repeat;
+  background-size:100% 5px ;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+.outer h2 {
+text-align: center;
+}
+.outer p, .level2 {
+color: #000000;
+}
+.outer ol {
+padding-left: 8%;
+padding-right: 8%;
+text-align: left;
+}
+.main {
+width: 16.5in;
+height: calc(11.7in * 0.1);
+position: absolute;
+background-color: #883A8A;
+color: #ffffff90;
+font-family: Open Sans;
+background-image: linear-gradient(#883A8A 50%,#4D204E);
+}
+.main strong {
+color: #ffffff;
+}
+.main strong > sup {
+color: #ffffff;
+}
+.main sup {
+color: #ffffff90;
+}
+#main-img-left {
+width: 10%;
+left: 0.5in;
+bottom: 0.2in;
+position: absolute;
+}
+#main-img-center {
+width: 10%;
+left: calc(16.5in * 0.45);
+bottom: 0.5in;
+position: absolute;
+}
+#main-img-right {
+width: 10%;
+right: 0.5in;
+bottom: 0.2in;
+position: absolute;
+}
+.main p {
+font-size: 50px;
+font-family: Open Sans;
+text-align: center;
+margin: 0;
+position: absolute;
+top: 50%;
+-ms-transform: translateY(-50%);
+transform: translateY(-50%);
+margin-left: 1em;
+}
+.fab {
+color: #00000030;
+font-size: 25px;
+}
+.twitter, i {
+color: #00000030;
+font-size: 35px;
+text-decoration: none;
+}
+a.email {
+text-decoration: none;
+color: #00000030;
+font-size: 35px;
+}
+.envelope {
+color: #00000030;
+font-size: 5px;
+text-decoration: none;
+}
+.poster_wrap {
+width: 16.5in;
+height: 11.7in;
+padding: 0cm;
+}
+.main_bottom {
+width: 16.5in;
+height: calc(11.7in * 0.05);
+margin-top: calc(11.7in * (1 - 0.05));
+position: absolute;
+background-color: #883A8A;
+background-image: linear-gradient(#4D204E 10%, #883A8A);
+}
+.section {
+  padding-left: 10mm;
+  padding-right: 10mm;
+}
+span > #tab:mytable {
+  font-weight: bold;
+}
+.orcid img {
+  width: 3%;
+}
+.emphasis {
+  background-color: #008080;
+  color: #ffffff;
+  border: solid #0b2045 3mm;
+  margin: 1em;
+  padding-left: 0;
+  padding-right: 0;
+}
+.emphasis h1 {
+  font-weight: bold;
+  background: none;
+  background-color: #0b2045;
+  padding-bottom: 5mm;
+  padding-top: 1mm;
+  margin-top: -1mm;
+  margin-right: -1mm;
+  margin-left: -1mm;
+}
+.emphasis blockquote {
+  border: 0;
+}
+.emphasis ol {
+  padding: 0;
+  padding-left: 8%;
+  font-size: 100%;
+  font-weight: bold;
+}
+.emphasis p {
+  color: #ffffff;
+}
+</style>
+</head>
+<body>
+
+
+<div class="poster_wrap">
+
+<div class="column outer">
+<div class="section">
+
+
+
+</div>
+
+<div id="women-in-data-science" class="section level1 mybreak">
+<h1>Women* in data science</h1>
+<p>Even in 2020, <strong>women and gender minorities* are vastly underrepresented in data science and technology careers</strong> - despite the fact that women make up <strong>more than 50%</strong> of undergraduate and graduate programs in most countries.</p>
+<p><img src="Poster_DivyaTrial_files/figure-html/gendergap-1.png" width="80%" style="display: block; margin: auto;" /></p>
+<p><img src="Poster_DivyaTrial_files/figure-html/wordcloud-1.png" width="80%" style="display: block; margin: auto;" /></p>
+<div style="display: flex;">
+<div>
+<p>R is a <strong>free</strong>, <strong>open-source</strong>, language for <strong>statistical computing</strong> and <strong>data visualisation</strong> which is extremely popular with students, researchers, professionals and employers for being powerful and flexible.</p>
+</div>
+<div>
+<p><img src="Poster/data/R-LadiesGlobal.png" width="150px" style="display: block; margin: auto;" /></p>
+</div>
+</div>
+</div>
+<div id="join-r-ladies" class="section level1 mybreak">
+<h1>Join R-Ladies!</h1>
+<div>
+<p><strong>R-Ladies is:</strong><br />
+- a <strong>worldwide</strong> initiative<br />
+- to promote gender diversity<br />
+- in one of the most widely-used statistical programming languages: R!</p>
+</div>
+<p><strong>Your local R-Ladies Freiburg chapter always welcomes new members and speakers!</strong><br />
+<img src="Poster_DivyaTrial_files/figure-html/rladies_global-1.png" width="80%" style="display: block; margin: auto;" /></p>
+<div>
+<p><strong>We meet</strong><br />
+- once per month<br />
+- on the first Wednesday<br />
+- at 6 p.m.<br />
+to learn about and discuss a new topic presented by one of our members.</p>
+</div>
+<div style="display: flex;">
+<div>
+<p><strong>Newbies and pros alike! All genders and levels welcome.</strong><br />
+Please get in touch to share <strong>ideas</strong> or if you’d like to <strong>get involved</strong>
+Follow the QR code to find us on <strong>meetup.com</strong> or tweet us <span class="citation">@RLadiesFreiburg</span>!</p>
+</div>
+<div>
+<p><img src="Poster/data/qr-code.png" width="90px" style="display: block; margin: auto;" /></p>
+</div>
+</div>
+</div>
+
+</div>
+<div class="main">
+<p>R-Ladies Freiburg</p>
+</div>
+<div class="main_bottom">
+<img id="main-img-left" src=>
+<img id="main-img-center" src=>
+<img id="main-img-right" src=>
+</div>
+</div>
+
+
+
+</body>
+</html>
