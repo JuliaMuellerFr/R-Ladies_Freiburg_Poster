@@ -1,0 +1,139 @@
+---
+main_topsize: 0.1 #percent coverage of the poster
+main_bottomsize: 0.05
+poster_width: "16.5in"
+poster_height: "11.7in"
+column_numbers: 3
+#ESSENTIALS
+#title: '**A Better Reproducible Poster Title**'
+main_findings:
+  - "" 
+output: 
+  posterdown::posterdown_betterport:
+    self_contained: false
+    pandoc_args: --mathjax
+    number_sections: false
+primary_colour: "#883A8A"
+secondary_colour: "#4D204E"
+accent_colour: "#C64781"
+main_textsize: "70px"
+body_textsize: "24px"
+title_textsize: "28px"
+caption_textsize: "24px"
+main_fontfamily: "Open Sans"
+#Command to render is: pagedown::chrome_print("PATH/GitHub/R-Ladies_Freiburg_Poster/RLadies_Freiburg_Poster.Rmd")
+#pagedown::chrome_print("C:/Users/ichas/Documents/RLadies/R-Ladies_Freiburg_Poster/RLadies_Freiburg_Poster.Rmd")
+---
+```{r, include=FALSE}
+# Settings
+knitr::opts_chunk$set(echo = FALSE,
+                      warning = FALSE,
+                      tidy = FALSE,
+                      message = FALSE,
+                      fig.align = 'center',
+                      out.width = "100%")
+options(knitr.table.format = "html") 
+
+library(tidyverse)
+library(wordcloud)
+library(rnaturalearth)
+library(rnaturalearthdata)
+library(ggrepel)
+library(extrafont)
+
+my_colours <- c("#883a8a", "#4d204e", "#b172b3", "#400542", "#050530", "#40407d", "#69589C", "#5339A0")
+```
+# Are you a women in tech? {.mybreak}
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+Do you do data analysis?
+
+Do you need to communicate your results?
+
+Learn what we do...
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+# Contact us {.mybreak}
+
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+<img src="data/email.png" width="20"> [freiburg@rladies.org](freiburg@rladies.org)
+
+<img src="data/Meetup_Logo.png" width="25"> [www.meetup.com/rladies-freiburg/](https://www.meetup.com/rladies-freiburg/)
+
+<img src="data/Twitter.png" width="20"> [\@RLadiesFreiburg](\@RLadiesFreiburg)
+
+<br/>
+
+# We are {.mybreak}
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+
+```{r, out.width = "350px"}
+knitr::include_graphics("data/R-Ladies-01.png")
+
+```
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
