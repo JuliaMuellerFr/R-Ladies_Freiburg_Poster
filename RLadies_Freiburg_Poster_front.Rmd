@@ -43,7 +43,7 @@ library(extrafont)
 
 my_colours <- c("#883a8a", "#4d204e", "#b172b3", "#400542", "#050530", "#40407d", "#69589C", "#5339A0")
 ```
-# Are you a women in tech? {.mybreak}
+# Is R-Ladies for me? {.mybreak}
 
 <br/>
 <br/>
@@ -54,11 +54,19 @@ my_colours <- c("#883a8a", "#4d204e", "#b172b3", "#400542", "#050530", "#40407d"
 <br/>
 <br/>
 
-Do you do data analysis?
+Do you do data analysis as a part of your work or studies?
 
-Do you need to communicate your results?
+Do you want to make eye-catching graphics to share important quantitative information?
 
-Learn what we do...
+Are you interested in the fields of data science or machine learning?
+
+Do you do academic research or are in a study program?
+
+Do you want to impress your colleagues with your data wrangling skills?
+
+Have you heard about R and just want to find out what all the fuss is about?
+
+R-Ladies is for everyone!
 
 <br/>
 <br/>
@@ -68,17 +76,7 @@ Learn what we do...
 <br/>
 <br/>
 <br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
 
-# Contact us {.mybreak}
 
 
 <br/>
@@ -106,6 +104,7 @@ Learn what we do...
 <br/>
 <br/>
 
+** Contact us! ** 
 <img src="data/email.png" width="20"> [freiburg@rladies.org](freiburg@rladies.org)
 
 <img src="data/Meetup_Logo.png" width="25"> [www.meetup.com/rladies-freiburg/](https://www.meetup.com/rladies-freiburg/)
@@ -114,7 +113,6 @@ Learn what we do...
 
 <br/>
 
-# We are {.mybreak}
 
 <br/>
 <br/>

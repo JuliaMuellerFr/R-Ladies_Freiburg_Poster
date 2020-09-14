@@ -87,13 +87,13 @@ ggplot(gendergap, aes(x=position, y=percent, group=gender, color=gender)) +
 ::: {}
 **R-Ladies global:**
 
-  - aims to achieve proportionate representation
+  - is a worldwide organization with hundreds of local chapters
   
-  - by encouraging genders currently underrepresented
+  - aims to promote gender diversity in leadership, use, and teaching
   
-  - in one of the most widely-used statistical programming languages: R!  
+  - celebrates one of the most widely-used statistical programming languages: R!  
 
-learn more in **rladies.org**
+Learn more at **rladies.org**
 :::
 
 ::::
@@ -104,13 +104,13 @@ R is a language for **statistical computing** and **data visualisation** which i
 
   - completely **free**  
 
-  - already the **standard** for statistical analyses  
+  - the **standard** for statistical analyses  
 
   - **powerful** and **flexible**  
 
   - **open-source** and **well-supported**  
 
-Are you wondering what you can do with R? Here some examples:  
+Wondering what you can do with R? Here some examples:  
 ```{r wordcloud, fig.height = 7}
 # topics from https://yabellini.shinyapps.io/RLadiesLesson/
 
@@ -174,7 +174,7 @@ ggplot() +
 
   - in workshops to discuss one specific topic 
   
-  - to do  parallel coding
+  - to do parallel coding
   
   - or sometimes just to have fun
 
