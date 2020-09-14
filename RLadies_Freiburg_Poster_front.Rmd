@@ -120,19 +120,14 @@ Learn what we do...
 <br/>
 <br/>
 <br/>
-<br/>
-<br/>
 
 
-```{r, out.width = "350px"}
+
+```{r, out.width = "460px"}
 knitr::include_graphics("data/R-Ladies-01.png")
 
 ```
 
-<br/>
-<br/>
-<br/>
-<br/>
 <br/>
 <br/>
 <br/>
