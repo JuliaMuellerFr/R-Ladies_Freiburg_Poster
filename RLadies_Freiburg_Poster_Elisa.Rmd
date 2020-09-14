@@ -1,0 +1,191 @@
+---
+main_topsize: 0.1 #percent coverage of the poster
+main_bottomsize: 0.05
+poster_width: "16.5in"
+poster_height: "11.7in"
+column_numbers: 3
+#ESSENTIALS
+#title: '**A Better Reproducible Poster Title**'
+main_findings:
+  - "R-Ladies Freiburg" 
+output: 
+  posterdown::posterdown_betterport:
+    self_contained: false
+    pandoc_args: --mathjax
+    number_sections: false
+primary_colour: "#883A8A"
+secondary_colour: "#4D204E"
+accent_colour: "#C64781"
+main_textsize: "70px"
+body_textsize: "24px"
+title_textsize: "28px"
+caption_textsize: "24px"
+main_fontfamily: "Open Sans"
+#Command to render is: pagedown::chrome_print("PATH/GitHub/R-Ladies_Freiburg_Poster/RLadies_Freiburg_Poster.Rmd")
+#pagedown::chrome_print("C:/Users/ichas/Documents/RLadies/R-Ladies_Freiburg_Poster/RLadies_Freiburg_Poster.Rmd")
+---
+# Women* in data science {.mybreak}
+```{r, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE,
+                      warning = FALSE,
+                      tidy = FALSE,
+                      message = FALSE,
+                      fig.align = 'center',
+                      out.width = "100%")
+options(knitr.table.format = "html") 
+
+library(tidyverse)
+library(wordcloud)
+library(rnaturalearth)
+library(rnaturalearthdata)
+library(ggrepel)
+library(extrafont)
+
+my_colours <- c("#883a8a", "#4d204e", "#b172b3", "#400542", "#050530", "#40407d", "#69589C", "#5339A0")
+```
+Even in 2020, **women and gender minorities are vastly underrepresented in data science and technology careers**.  
+
+```{r, gendergap, fig.height = 6}
+#need to note source: Harnham Diversity Report 2020
+gendergap <- tibble(
+  gender = as.factor(rep(c("women", "men"), 4)),
+  position = rep(c("Entry Level", "Mid-Level", "Technical Lead", "Director"), each = 2),
+  percent  = c(28, 72, 20, 80, 17, 83, 17, 83)
+) %>%
+  mutate(position = factor(position, levels = c("Entry Level", "Mid-Level", "Technical Lead", "Director")))
+
+
+ggplot(gendergap, aes(x=position, y=percent, group=gender, color=gender)) +
+  geom_line(stat = "identity", size=2, show.legend=F) +
+  geom_label(data=subset(gendergap, position == "Director"), 
+             aes(x=position, y=percent, label = gender), show.legend=F) +
+  geom_segment(aes(x=2.8, xend=2.8, y=80, yend=20), 
+               size=1.5, arrow = arrow(), show.legend=F, color="darkgrey")+
+  geom_segment(aes(x=2.8, xend=2.8, y=20, yend=80), 
+               size=1.5, arrow = arrow(), show.legend=F, color="darkgrey")+
+  geom_label(aes(x=2.8, y=50, label = "Data Science\nGender Gap"), 
+             show.legend=F, color="darkgrey") +
+  theme_light() +
+  labs(title = "Women in data science roles in the EU, 2020",
+       caption = "Source: Harnham Diversity Report 2020") +
+  theme(
+    axis.title.x = element_blank(),
+    axis.title.y = element_blank(),
+    panel.grid.minor=element_blank(),
+    text=element_text(size=16, family="serif")
+  ) + 
+  scale_y_continuous(labels = function(x) paste0(x, "%"),
+                     limits = c (0,100),
+                     expand=c(0,0)) +
+  scale_x_discrete(expand=c(0,0.2)) + 
+  scale_color_manual(values = c(my_colours[2], my_colours[3])) +
+  theme(text = element_text(size = 16, family = "Open Sans"))
+```
+
+:::: {style="display: flex;"}
+
+::: {}
+**R-Ladies global:**
+
+  - aims to achieve proportionate representation
+  
+  - by encouraging genders currently underrepresented
+  
+  - in one of the most widely-used statistical programming languages: R!  
+
+learn more in **rladies.org**
+:::
+
+::::
+
+# Why use R? {.mybreak}
+
+R is a language for **statistical computing** and **data visualisation** which is  
+
+  - completely **free**  
+
+  - already the **standard** for statistical analyses  
+
+  - **powerful** and **flexible**  
+
+  - **open-source** and **well-supported**  
+
+Are you wondering what you can do with R? Here some examples:  
+```{r wordcloud, fig.height = 7}
+# topics from https://yabellini.shinyapps.io/RLadiesLesson/
+
+word = c("statistics", "visualisation", "machine learning", "analyse Twitter", "sentiment analysis", "neural networks", "digital humanities", "web scraping", "interactive web apps", "distant reading", "graphs", "reproducible science", "deep learning", "geographical data", "data communication", "decision trees", "tidyverse", "data wrangling", "time series", "ggplot", "statistics", "data", "modeling", "design", "analysis", "results")
+freq = c(100, 100, 64, 87, 83, 86, 83, 63, 67, 63, 63, 45, 43, 43, 35, 33, 34, 33, 35, 34, 36, 33, 34, 36, 31, 35)
+
+df = cbind(word, freq)
+df <- as.data.frame(df)
+df$freq <- as.numeric(as.character(df$freq))
+
+my_colours_list <- rep(my_colours, round(length(word)/length(my_colours)))
+
+wordcloud(words = df$word, freq = df$freq,
+          colors = my_colours_list,
+          rot.per = 0.0,
+          fixed.asp = FALSE,
+          family = "Open Sans")
+```
+
+
+# Join R-Ladies Freiburg! {.mybreak}
+
+**Your local chapter always welcomes new members!**  
+
+```{r, rladies_global, warnings=F,  fig.height= 3.7}
+rladies_global <- read_csv('data/rladies_global.csv') 
+
+#cities <- read_csv('world-cities-database/worldcitiespop.csv')%>%
+  #distinct(City, .keep_all = TRUE)
+#rladies_global <- rladies_global %>%
+  #left_join(cities, by=c("City" = "AccentCity"))
+#write_csv(rladies_global, "rladies_global.csv")
+
+world <- ne_countries(scale = "small", returnclass = "sf")%>%
+  subset(!(name %in% c("Antarctica", "Fr. S. Antarctic Lands")))
+
+ggplot() +
+  geom_sf(data = world, color=my_colours[4], fill="#F3F3F3") +
+  geom_point(data=rladies_global, aes(x=Longitude, y=Latitude), color=my_colours[3], size=1)+
+  geom_point(data=subset(rladies_global, City=="Freiburg"), aes(x=Longitude, y=Latitude), color="#FCD112", size=3)+
+  geom_label(data=subset(rladies_global, City=="Freiburg"), aes(x=(Longitude), y=(Latitude + 20), label = "Freiburg since 03/2019", color="#C64781"), show.legend=F) +
+  theme_light()+
+  ggtitle("R-Ladies chapters around the world")+
+  theme(
+    axis.title.x = element_blank(),
+    axis.title.y = element_blank(),
+    panel.grid.major=element_blank(), 
+    axis.text.x=element_blank(),
+    axis.ticks.x=element_blank(),
+    axis.text.y=element_blank(),
+    axis.ticks.y=element_blank(),
+    text=element_text(size = 16, family = "Open Sans")
+  ) +
+  xlim(-140,140)
+```
+
+:::: {style="display: flex;"}
+
+::: {}
+**We meet**  
+
+  - in workshops to discuss one specific topic 
+  
+  - to do  parallel coding
+  
+  - or sometimes just to have fun
+
+in a safe environment where we can all learn and exchange.
+
+Are you a **complete beginner** or a **total profi**?
+You are welcome to learn and share your expertise!
+
+**Contact us!**  
+```{r, out.width = "80px"}
+knitr::include_graphics("data/qr-code.png")
+```
+:::
+::::
