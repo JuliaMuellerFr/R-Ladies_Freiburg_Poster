@@ -43,7 +43,7 @@ library(extrafont)
 
 my_colours <- c("#883a8a", "#4d204e", "#b172b3", "#400542", "#050530", "#40407d", "#69589C", "#5339A0")
 ```
-Even in 2020, **women and gender minorities are vastly underrepresented in data science and technology careers** - despite the fact that women make up **more than 50%** of undergraduate and graduate programs in most countries.  
+Even in 2020, **women and gender minorities are vastly underrepresented in data science and technology careers**.
 
 ```{r, gendergap, fig.height = 6}
 #need to note source: Harnham Diversity Report 2020
@@ -129,7 +129,6 @@ wordcloud(words = df$word, freq = df$freq,
 ```
 <br/>
 <br/>
-Poster by Kyla McConnell (@kylamcconnell) and Julia Müller (@JuliaMuellerFr)
 
 # Join R-Ladies! {.mybreak}
 
@@ -171,10 +170,12 @@ ggplot() +
 
 ::: {}
 **We meet**  
-  - once per month  
-  - on the first Wednesday  
-  - at 6 p.m.  
-to learn about and discuss a new topic presented by one of our members.
+
+  - in workshops to discuss a specific topic
+  - to do parallel coding
+  - or just to have fun
+  
+All in a safe environment where we can all learn and exchange.
 
 :::
 
