@@ -181,7 +181,7 @@ All in a safe environment where we can all learn and exchange.
 
 ::: {}
 ```{r, out.width = "150px"}
-knitr::include_graphics("data/R-LadiesGlobal.png")
+knitr::include_graphics("data/R-Ladies-01.png")
 ```
 :::
 
